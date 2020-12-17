@@ -1,0 +1,208 @@
+Problem 1:
+
+var obj = {name :"RajiniKanth", age : 33, hasPets : false};
+function printAllValues(obj) {
+    console.log(Object.values(obj))
+ // your code here
+}
+printAllValues(obj)
+
+*****************************************************************
+
+Problem 2:
+
+var obj = {name :"RajiniKanth", age : 33, hasPets : false};
+function printAllValues(obj) {
+    console.log(Object.keys(obj))
+ // your code here
+}
+printAllValues(obj)
+
+******************************************************************
+
+Problem 3:
+
+var obj = {name: 'ISRO', age: 35, role: 'Scientist'};
+var newarray=[];
+function convertListToObject(obj) {
+ // your code here
+ for(var i in obj)
+ {
+    newarray.push([i,obj[i]])
+ }
+ console.log(newarray)
+}
+convertListToObject(obj)
+
+*******************************************************************
+
+Problem 4:
+
+var arr = ['GUVI', 'I', 'am', 'Geek'];
+var newObject={}
+function transformFirstAndLast(arr) {
+      newObject[arr[0]]=arr[arr.length-1];
+ return newObject;
+}
+console.log(transformFirstAndLast(arr))
+
+**********************************************************************
+
+Problem 5:
+
+var arr = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]];
+function fromListToObject(arr) {
+ var newObject = {};
+ for(var i=0;i<arr.length;i++)
+ {
+     for(var j=0;j<arr[i].length-1;j++)
+     {
+         newObject[arr[i][j]]=arr[i][j+1]
+     }
+ }
+ return newObject;
+}
+console.log(fromListToObject(arr))
+
+*********************************************************************
+
+Problem 6:
+
+var arr= [[['firstName', 'Vasanth'], ['lastName', 'Raja'], ['age', 24], ['role', 'JSWizard']], [['firstName', 'Sri'], ['lastName', 'Devi'], ['age', 28], ['role', 'Coder']]];
+
+function transformEmployeeData(arr) {
+ var tranformEmployeeList = [];
+ for(var i=0;i<arr.length;i++)
+ {
+     var newobject={}
+     for(var j=0;j<arr[i].length;j++)
+     {
+         
+         for(var k=0;k<arr[i][j].length-1;k++)
+         {
+            newobject[arr[i][j][k]]=arr[i][j][k+1]
+         }
+     }
+     tranformEmployeeList.push(newobject)
+     
+ }
+ //Your code
+ 
+ return tranformEmployeeList;
+}
+console.log(transformEmployeeData(arr))
+
+***********************************************************************
+
+Problem 7:
+
+Failure case:
+
+var expected = {foo: 5, bar: 6};
+var actual = {foo: 6, bar: 5}
+function assertObjectsEqual(actual, expected, testName){
+    var result=JSON.stringify(actual,expected)
+    if(JSON.stringify(actual)==JSON.stringify(expected))
+    {
+    console.log("Passed")
+    }
+    else
+    {
+        console.log("FAILED"+" "+"["+ testName+"] " +"Expected "+ JSON.stringify(expected)+" but got "+""+ JSON.stringify(actual))
+    }
+ // your code here
+}
+
+assertObjectsEqual(actual,expected,"mytest")
+
+
+Success Case:
+
+var expected = {foo: 5, bar: 6};
+var actual = {foo: 5, bar: 6}
+function assertObjectsEqual(actual, expected, testName){
+    var result=JSON.stringify(actual,expected)
+    if(JSON.stringify(actual)==JSON.stringify(expected))
+    {
+    console.log("Passed")
+    }
+    else
+    {
+        console.log("FAILED"+" "+"["+ testName+"] " +"Expected "+ JSON.stringify(expected)+" but got "+""+ JSON.stringify(actual))
+    }
+ // your code here
+}
+
+assertObjectsEqual(actual,expected,"mytest")
+
+********************************************************************************************
+
+Problem 8:
+
+var securityQuestions = [
+ {
+ question: 'What was your first pet’s name?',
+ expectedAnswer: 'FlufferNutter'
+ },
+ {
+ question: 'What was the model year of your first car?',
+ expectedAnswer: '1985'
+ },
+ {
+ question: 'What city were you born in?',
+ expectedAnswer: 'NYC'
+ }
+]
+function chksecurityQuestions(securityQuestions,question,answer) {
+for(var i=0;i<securityQuestions.length;i++)
+{
+    if(securityQuestions[i].question==question)
+{
+    if(securityQuestions[i].expectedAnswer==answer)
+    {
+        return true;
+    }
+}
+}
+ // your code here
+ return false; 
+}
+//Test case1:
+var ques = 'What was your first pet’s name?';
+var ans  =  'FlufferNutter';
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status); // true
+//Test case2:
+var ques = 'What was your first pet’s name?';
+var ans  =  'DufferNutter';
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status); // flase
+*******************************************************************************************************
+
+Problem 9:
+
+var students = [
+ {
+ name: 'Siddharth Abhimanyu', age: 21}, { name: 'Malar', age: 25},
+ {name: 'Maari',age: 18},{name: 'Bhallala Deva',age: 17},
+ {name: 'Baahubali',age: 16},{name: 'AAK chandran',age: 23},   {name:'Gabbar Singh',age: 33},{name: 'Mogambo',age: 53},
+ {name: 'Munnabhai',age: 40},{name: 'Sher Khan',age: 20},
+ {name: 'Chulbul Pandey',age: 19},{name: 'Anthony',age: 28},
+ {name: 'Devdas',age: 56} 
+ ];
+ var newarray=[];
+function returnMinors(arr)
+{
+    
+    for(var i=0;i<students.length;i++)
+    {
+        if(students[i].age<20)
+        {
+            newarray.push(students[i])
+        }
+    }
+    return newarray
+}
+console.log(returnMinors(students));
+
+**********************************************************************************************************

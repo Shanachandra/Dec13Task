@@ -1,0 +1,67 @@
+Difference between Http1.1 and Http2:
+
+Http 1.1 allows only one request over one TCP connection whereas Http2 allows multiple request over one TCP connection
+Http 1.1 is old and required many tcp connection between client and server to request multipart data but Http 2 works better with data exchange between client and server
+Http 2 is evolution and brings new feature like web push and much more fater than http1.1
+
+***********************************************************************************************************************************************************************************
+
+Copy by Value and Copy by reference:
+
+Copy by value is Primitive data type. the latest assigned value doesnt affect the previous one
+
+eg:
+ var a=10;
+ var b=a;
+ b=30;
+ console.log(a,b)==> 10,30
+here assigning 'b' value again to 30 doesnt affect 'a' value since it only copied the value of 'a' not an address of 'a'
+
+Copy by reference is composite datatype. the latest assigned value will affect the previous one.
+
+eg:
+ var array1=[1,2,3]
+ var array2=array1
+ array2[2]=[5]
+ console.log(array1,array2)==>[1,2,5],[1,2,5]
+here assigning 'array2'[2] value again to '5' also affects 'array1' since it copied the address of the 'array1' to 'array2'
+
+************************************************************************************************************************************************************************************
+
+How to copy by value a composite datatype:
+
+Using for loop:
+
+var a=[1,2]
+var b=[];
+for(var i=0;i<a.length;i++)
+{
+    b.push(a[i])
+}
+b[0]=5
+console.log(a,b) ==>[ 1, 2 ] [ 5, 2 ]
+ 
+Using Spread Operator:
+
+var c=[1,2,3]
+var d=[...c]
+d[2]=0
+console.log(c,d)==>[ 1, 2, 3 ] [ 1, 2, 0 ]
+
+Using Object assign:
+
+var e=[1,2,3]
+var f=Object.assign([],e)
+f[0]=9
+console.log(e,f)==>[ 1, 2, 3 ] [ 9, 2, 3 ]
+
+Using JSON.Parse(JSON.stringify())
+
+var g=[3,4,5]
+var h=JSON.parse(JSON.stringify(g))
+h[1]=7
+console.log(g,h)==>[ 3, 4, 5 ] [ 3, 7, 5 ]
+
+****************************************************************************************************************************************************************************************
+
+
